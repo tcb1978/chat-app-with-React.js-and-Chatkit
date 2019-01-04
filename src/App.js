@@ -9,6 +9,7 @@ export default function App() {
       <main>
         <Chat/>
       </main>
+      <footer className="App-footer"></footer>
     </div>
   );
 }
