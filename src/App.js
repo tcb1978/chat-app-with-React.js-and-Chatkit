@@ -5,11 +5,9 @@ import './App.css'
 export default function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
-      <main>
+      <main className="main">
         <Chat/>
       </main>
-      <footer className="App-footer"></footer>
     </div>
   );
 }
