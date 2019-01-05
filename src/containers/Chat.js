@@ -24,6 +24,7 @@ class Chat extends Component {
 
     chatManager.connect()
       .then(currentUser => {
+        this.currentUser = currentUser
         currentUser.subscribeToRoom({
           roomId: 24902028,
           hooks: {
@@ -37,11 +38,18 @@ class Chat extends Component {
       })
   }
 
+  sendMessage = (text) => {
+    this.currentUser.sendMessage({
+      text,
+      roomId: 24902028
+    })
+  }
+
   render() {
     return (
       <section className="ChatKit">
         <MessageList messages={this.state.messages}/>
-        <SendMessageForm/>
+        <SendMessageForm sendMessage={this.sendMessage}/>
         <RoomList/>
         <NewRoomForm/>
       </section>
